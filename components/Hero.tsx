@@ -60,8 +60,9 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-4 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
-        <span className="text-zinc-300 text-[10px] uppercase tracking-[0.5em] font-bold">Scroll to Explore</span>
+      {/* Extreme Left Scroll Indicator */}
+      <div className="absolute bottom-12 left-12 animate-bounce flex flex-col items-center gap-4 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+        <span className="text-zinc-300 text-[10px] uppercase tracking-[0.5em] font-bold vertical-text">Scroll to Explore</span>
         <ArrowDown className="text-yellow-400 w-5 h-5" />
       </div>
 
