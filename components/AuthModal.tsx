@@ -31,23 +31,23 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMode = 'l
         onClick={onClose}
       />
       
-      <div className="relative w-full max-w-md bg-zinc-900 border border-zinc-800 shadow-2xl animate-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-md bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl animate-in zoom-in-95 duration-200">
         <div className="absolute top-0 left-0 w-1.5 h-full bg-yellow-400"></div>
         
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-zinc-400 dark:text-zinc-500 hover:text-zinc-950 dark:hover:text-white transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         <div className="p-8 md:p-10">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 bg-zinc-950 border border-zinc-800 flex items-center justify-center">
+            <div className="w-10 h-10 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
               <ShieldCheck className="text-yellow-400 w-6 h-6" />
             </div>
             <div>
-              <h2 className="text-2xl font-black text-white uppercase tracking-tighter">
+              <h2 className="text-2xl font-black text-zinc-950 dark:text-white uppercase tracking-tighter">
                 {mode === 'login' ? 'Client Access' : 'Register Project'}
               </h2>
               <p className="text-[10px] text-yellow-400 font-bold uppercase tracking-widest">
@@ -66,7 +66,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMode = 'l
                   required
                   type="text" 
                   placeholder="John Doe / Company Name"
-                  className="w-full bg-zinc-950 border border-zinc-800 text-white p-4 text-sm focus:border-yellow-400 outline-none transition-all placeholder:text-zinc-700"
+                  className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-950 dark:text-white p-4 text-sm focus:border-yellow-400 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-700"
                 />
               </div>
             )}
@@ -79,7 +79,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMode = 'l
                 required
                 type="email" 
                 placeholder="email@organization.com"
-                className="w-full bg-zinc-950 border border-zinc-800 text-white p-4 text-sm focus:border-yellow-400 outline-none transition-all placeholder:text-zinc-700"
+                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-950 dark:text-white p-4 text-sm focus:border-yellow-400 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-700"
               />
             </div>
 
@@ -91,13 +91,13 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMode = 'l
                 required
                 type="password" 
                 placeholder="••••••••"
-                className="w-full bg-zinc-950 border border-zinc-800 text-white p-4 text-sm focus:border-yellow-400 outline-none transition-all placeholder:text-zinc-700"
+                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-950 dark:text-white p-4 text-sm focus:border-yellow-400 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-700"
               />
             </div>
 
             <button 
               disabled={isLoading}
-              className="w-full bg-yellow-400 hover:bg-yellow-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-zinc-950 font-black py-4 flex items-center justify-center gap-3 uppercase text-xs tracking-[0.2em] transition-all"
+              className="w-full bg-yellow-400 hover:bg-yellow-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-800 disabled:text-zinc-400 dark:disabled:text-zinc-600 text-zinc-950 font-black py-4 flex items-center justify-center gap-3 uppercase text-xs tracking-[0.2em] transition-all"
             >
               {isLoading ? (
                 <Loader2 className="animate-spin w-4 h-4" />
@@ -110,13 +110,13 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMode = 'l
             </button>
           </form>
 
-          <div className="mt-8 pt-6 border-t border-zinc-800 flex flex-col items-center gap-4">
-            <p className="text-zinc-500 text-xs">
+          <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800 flex flex-col items-center gap-4">
+            <p className="text-zinc-500 text-xs text-center">
               {mode === 'login' ? "Don't have a corporate account?" : "Already registered with Sow?"}
             </p>
             <button 
               onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}
-              className="text-white hover:text-yellow-400 font-black uppercase text-[10px] tracking-widest transition-colors"
+              className="text-zinc-950 dark:text-white hover:text-yellow-400 dark:hover:text-yellow-400 font-black uppercase text-[10px] tracking-widest transition-colors"
             >
               {mode === 'login' ? 'Request Registration' : 'Return to Login'}
             </button>
